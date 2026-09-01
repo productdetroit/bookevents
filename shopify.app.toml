@@ -1,0 +1,4 @@
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "bookevents-dev.myshopify.com"
