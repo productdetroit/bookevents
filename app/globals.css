@@ -1,0 +1,109 @@
+/*
+ * Book Events design tokens.
+ * Palette, type scale and rules come from the brand sheet in the
+ * "Bookevents branding project" Claude Design project (brand/README.md).
+ */
+:root {
+  /* Palette */
+  --terracotta: #b4552f; /* primary accent */
+  --kiln: #7e3a1f; /* pressed, hover */
+  --ink: #1c1a17; /* text, wordmark */
+  --paper: #faf7f2; /* ground */
+  --ochre: #c8901f; /* filling up */
+  --field: #3f5340; /* available, confirmed */
+  --stone: #6e6a62; /* secondary text */
+  --chalk: #e5dfd5; /* rules, dividers */
+
+  /* Extensions used by the marketing page */
+  --bark: #4a463f; /* body copy on paper */
+  --sand: #c9bfaf; /* quiet borders */
+  --card: #ffffff; /* raised surfaces on paper */
+  --wash: #fbf4ef; /* terracotta-tinted row highlight */
+  --paper-dim: #b8b2a6; /* body copy on ink */
+  --paper-faint: #8c867b; /* fine print on ink */
+
+  /* Type */
+  --font-display: var(--font-newsreader), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-archivo), system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Layout */
+  --measure: 1180px;
+  --gutter: 48px;
+
+  color-scheme: light;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --gutter: 28px;
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --gutter: 20px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+}
+
+body {
+  color: var(--ink);
+  font-family: var(--font-body);
+  text-wrap: pretty;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--terracotta);
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

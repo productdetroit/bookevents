@@ -1,0 +1,1020 @@
+/* ---------------------------------------------------------------
+   Shared marketing-page styles.
+   Imported by every section component in app/_components.
+   --------------------------------------------------------------- */
+
+/* Layout primitives ------------------------------------------------ */
+
+.shell {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+/* Every band below the hero opens with the same generous rule of space. */
+.section {
+  composes: shell;
+  padding-top: clamp(64px, 9vw, 112px);
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.028em;
+  line-height: 1.08;
+  font-size: clamp(32px, 4.6vw, 54px);
+}
+
+.serif {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.lede {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--bark);
+}
+
+/* Buttons ---------------------------------------------------------- */
+
+.btn {
+  font-size: 15px;
+  font-weight: 500;
+  transition: background-color 140ms ease, border-color 140ms ease,
+    color 140ms ease;
+}
+
+.btnPrimary {
+  composes: btn;
+  background: var(--terracotta);
+  color: var(--paper);
+  padding: 16px 32px;
+}
+
+.btnPrimary:hover {
+  background: var(--kiln);
+  color: var(--paper);
+}
+
+.btnGhost {
+  composes: btn;
+  border: 1px solid var(--sand);
+  padding: 15px 28px;
+}
+
+.btnGhost:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+/* Full-width variants used inside pricing cards and the closing CTA. */
+.btnBlock {
+  composes: btn;
+  display: block;
+  text-align: center;
+  padding: 15px;
+}
+
+.btnBlockPrimary {
+  composes: btnBlock;
+  background: var(--terracotta);
+  color: var(--paper);
+}
+
+.btnBlockPrimary:hover {
+  background: var(--kiln);
+  color: var(--paper);
+}
+
+.btnBlockGhost {
+  composes: btnBlock;
+  border: 1px solid var(--sand);
+  padding: 14px;
+}
+
+.btnBlockGhost:hover {
+  border-color: var(--ink);
+}
+
+/* Header ----------------------------------------------------------- */
+
+.header {
+  border-bottom: 1px solid var(--chalk);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.headerInner {
+  composes: shell;
+  padding-block: 18px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 21px;
+  letter-spacing: -0.02em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  font-size: 14px;
+  margin-left: auto;
+}
+
+.navCta {
+  background: var(--terracotta);
+  color: var(--paper);
+  padding: 11px 22px;
+  font-weight: 500;
+  transition: background-color 140ms ease;
+}
+
+.navCta:hover {
+  background: var(--kiln);
+  color: var(--paper);
+}
+
+/* Hero ------------------------------------------------------------- */
+
+.hero {
+  composes: shell;
+  padding-top: clamp(56px, 8vw, 96px);
+  padding-bottom: clamp(64px, 8.5vw, 104px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 80px;
+  align-items: center;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid var(--sand);
+  padding: 7px 14px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--bark);
+  margin-bottom: 32px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: var(--field);
+  display: block;
+  flex: none;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(40px, 7.4vw, 82px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: 0 0 28px;
+}
+
+.heroLede {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--bark);
+  max-width: 46ch;
+  margin: 0 0 36px;
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.heroNote {
+  font-size: 14px;
+  color: var(--stone);
+}
+
+/* Occurrence card -------------------------------------------------- */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--chalk);
+  padding: 34px 32px;
+}
+
+.cardHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+
+.cardWhen {
+  font-size: 12px;
+  color: var(--stone);
+}
+
+.cardTitle {
+  composes: serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.1;
+  margin-bottom: 26px;
+}
+
+.cardLabel {
+  composes: eyebrow;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.pools {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-bottom: 28px;
+}
+
+.meterRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.meterName {
+  font-size: 14px;
+  width: 104px;
+  flex: none;
+  color: var(--ink);
+}
+
+/* The track is a plain rule; the fill width comes from --fill inline. */
+.track {
+  flex: 1;
+  min-width: 0;
+  height: 9px;
+  background: var(--chalk);
+  display: block;
+  position: relative;
+}
+
+.fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--fill);
+  display: block;
+}
+
+.fillField {
+  composes: fill;
+  background: var(--field);
+}
+
+.fillOchre {
+  composes: fill;
+  background: var(--ochre);
+}
+
+.fillTerracotta {
+  composes: fill;
+  background: var(--terracotta);
+}
+
+.meterValue {
+  font-size: 13px;
+  color: var(--bark);
+  width: 92px;
+  flex: none;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.tickets {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--chalk);
+}
+
+.ticket {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--chalk);
+}
+
+.ticketFeatured {
+  composes: ticket;
+  background: var(--wash);
+}
+
+.ticketMuted {
+  composes: ticket;
+  color: var(--stone);
+}
+
+.ticketName {
+  font-size: 15px;
+  flex: 1;
+  min-width: 0;
+}
+
+.ticketNameFeatured {
+  composes: ticketName;
+  font-weight: 500;
+}
+
+.ticketCost {
+  font-size: 12px;
+  color: var(--stone);
+}
+
+.ticketCostFeatured {
+  composes: ticketCost;
+  color: var(--terracotta);
+  font-weight: 500;
+}
+
+.ticketPrice {
+  composes: serif;
+  font-size: 19px;
+  width: 70px;
+  flex: none;
+  text-align: right;
+}
+
+.cardNote {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--bark);
+  padding-top: 18px;
+}
+
+.cardNote strong {
+  font-weight: 600;
+}
+
+/* Stats band ------------------------------------------------------- */
+
+.band {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.bandInner {
+  composes: shell;
+  padding-block: clamp(44px, 5.5vw, 64px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 44px;
+}
+
+.statFigure {
+  composes: serif;
+  font-size: 34px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.statBody {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--paper-dim);
+}
+
+/* Features --------------------------------------------------------- */
+
+.sectionHead {
+  margin-bottom: 28px;
+}
+
+.featuresTitle {
+  composes: display;
+  margin: 0 0 20px;
+  max-width: 22ch;
+}
+
+.featuresLede {
+  composes: lede;
+  max-width: 56ch;
+  margin: 0 0 64px;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px 44px;
+  padding-bottom: 24px;
+}
+
+.featureHeading {
+  composes: serif;
+  font-weight: 400;
+  font-size: 25px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ink);
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--bark);
+}
+
+/* Capacity split --------------------------------------------------- */
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  border: 1px solid var(--chalk);
+}
+
+.splitLeft {
+  padding: 52px clamp(28px, 4vw, 48px);
+  border-right: 1px solid var(--chalk);
+}
+
+.splitRight {
+  padding: 52px clamp(28px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.splitTitle {
+  composes: display;
+  font-size: clamp(30px, 3.8vw, 44px);
+  line-height: 1.1;
+  margin: 0 0 20px;
+}
+
+.splitBody {
+  composes: lede;
+  margin: 0 0 20px;
+}
+
+.splitBody:last-child {
+  margin-bottom: 0;
+}
+
+/* The split panel sets its label slightly tighter than a section head. */
+.splitLabel {
+  composes: eyebrow;
+  display: block;
+  margin-bottom: 22px;
+}
+
+.sessions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 26px;
+}
+
+.sessionTime {
+  font-size: 15px;
+  width: 64px;
+  flex: none;
+  color: var(--bark);
+}
+
+.sessionTimeMuted {
+  composes: sessionTime;
+  color: var(--stone);
+}
+
+.sessionState {
+  font-size: 13px;
+  width: 118px;
+  flex: none;
+  text-align: right;
+}
+
+.stateField {
+  composes: sessionState;
+  color: var(--field);
+}
+
+.stateOchre {
+  composes: sessionState;
+  color: var(--ochre);
+}
+
+.stateTerracotta {
+  composes: sessionState;
+  color: var(--terracotta);
+}
+
+.splitNote {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--bark);
+}
+
+/* Pricing ---------------------------------------------------------- */
+
+.pricingHead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+
+.pricingTitle {
+  composes: display;
+  margin: 0;
+  max-width: 24ch;
+}
+
+.pricingLede {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--bark);
+  margin: 0;
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.plan {
+  border: 1px solid var(--chalk);
+  background: var(--card);
+  padding: 40px 34px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.planFeatured {
+  composes: plan;
+  border-color: var(--ink);
+}
+
+.planFlag {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background: var(--terracotta);
+  color: var(--paper);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 7px 12px;
+}
+
+.planName {
+  composes: serif;
+  font-weight: 400;
+  font-size: 27px;
+  margin-bottom: 8px;
+}
+
+.planFor {
+  font-size: 14px;
+  color: var(--stone);
+  margin-bottom: 28px;
+}
+
+.planPrice {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.planAmount {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(44px, 4.6vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.planPer {
+  font-size: 15px;
+  color: var(--stone);
+}
+
+.planRate {
+  font-size: 15px;
+  color: var(--bark);
+  margin-bottom: 28px;
+}
+
+.planList {
+  composes: list;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex: 1;
+}
+
+.finePrint {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--stone);
+  padding-top: 22px;
+  max-width: 88ch;
+}
+
+/* Roadmap ---------------------------------------------------------- */
+
+.roadmapTitle {
+  composes: display;
+  margin: 0 0 56px;
+  max-width: 22ch;
+}
+
+.roadmapGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 44px;
+  border-top: 1px solid var(--ink);
+  padding-top: 32px;
+}
+
+.stageHead {
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.stageDot {
+  width: 8px;
+  height: 8px;
+  display: block;
+  flex: none;
+}
+
+.stageLabel {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.roadmapList {
+  composes: list;
+  gap: 13px;
+}
+
+.roadmapNote {
+  font-size: 14px;
+  color: var(--stone);
+  padding-top: 26px;
+}
+
+/* Origin story ----------------------------------------------------- */
+
+.origin {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 440px;
+  gap: 72px;
+  align-items: start;
+}
+
+.originTitle {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(27px, 3.3vw, 38px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+}
+
+.originBody {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--bark);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.originSignoff {
+  color: var(--stone);
+  font-size: 15px;
+}
+
+.originAside {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.originCaption {
+  font-size: 13px;
+  color: var(--stone);
+}
+
+/* FAQ -------------------------------------------------------------- */
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px 64px;
+  border-top: 1px solid var(--ink);
+  padding-top: 40px;
+}
+
+.faqQuestion {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.faqAnswer {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--bark);
+}
+
+/* Closing CTA ------------------------------------------------------ */
+
+.cta {
+  background: var(--ink);
+  color: var(--paper);
+  padding: clamp(48px, 7vw, 88px) clamp(28px, 5.5vw, 72px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 72px;
+  align-items: center;
+}
+
+.ctaTitle {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  margin: 0 0 20px;
+}
+
+.ctaLede {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--paper-dim);
+  margin: 0;
+  max-width: 44ch;
+}
+
+.ctaActions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ctaPrimary {
+  composes: btnBlock;
+  background: var(--terracotta);
+  color: var(--paper);
+  padding: 18px;
+  font-size: 16px;
+}
+
+.ctaPrimary:hover {
+  background: var(--kiln);
+  color: var(--paper);
+}
+
+.ctaSecondary {
+  composes: btnBlock;
+  border: 1px solid var(--bark);
+  color: var(--paper);
+  padding: 17px;
+  font-size: 16px;
+}
+
+.ctaSecondary:hover {
+  border-color: var(--paper);
+  color: var(--paper);
+}
+
+.ctaNote {
+  font-size: 13px;
+  color: var(--paper-faint);
+  text-align: center;
+  padding-top: 4px;
+}
+
+/* Footer ----------------------------------------------------------- */
+
+.footer {
+  composes: shell;
+  padding-top: clamp(48px, 6vw, 72px);
+  padding-bottom: 64px;
+}
+
+.footerRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--chalk);
+  padding-top: 36px;
+}
+
+.footerWordmark {
+  composes: serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.footerDomain {
+  font-size: 14px;
+  color: var(--stone);
+}
+
+.footerLinks {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+  margin-left: auto;
+  color: var(--bark);
+  flex-wrap: wrap;
+}
+
+/* Photo frame ------------------------------------------------------ */
+
+.frame {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  background: var(--chalk);
+  overflow: hidden;
+}
+
+.frameImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.framePlaceholder {
+  composes: frame;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--chalk),
+    var(--chalk) 10px,
+    #ded7cb 10px,
+    #ded7cb 20px
+  );
+}
+
+.framePlaceholderText {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--bark);
+  text-align: center;
+  background: var(--paper);
+  padding: 10px 16px;
+  max-width: 30ch;
+}
+
+/* Responsive ------------------------------------------------------- */
+
+@media (max-width: 1040px) {
+  .hero,
+  .origin,
+  .pricingHead,
+  .cta {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+  }
+
+  .featureGrid,
+  .bandInner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .splitLeft {
+    border-right: 0;
+    border-bottom: 1px solid var(--chalk);
+  }
+
+  .plans,
+  .roadmapGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricingHead {
+    align-items: start;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 860px) {
+  .headerInner {
+    padding-block: 12px;
+  }
+
+  /* Install keeps the top line; the sections take a full-width second row. */
+  .nav {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    gap: 8px 20px;
+  }
+
+  .navCta {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .featureGrid,
+  .bandInner,
+  .plans,
+  .roadmapGrid,
+  .faqGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .featureGrid {
+    gap: 40px;
+  }
+
+  .faqGrid {
+    gap: 36px;
+  }
+
+  .heroActions {
+    gap: 12px;
+  }
+
+  .btnPrimary,
+  .btnGhost {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .footerLinks {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 26px 20px;
+  }
+
+  .plan,
+  .planFeatured {
+    padding: 32px 24px;
+  }
+
+  .meterName {
+    width: 84px;
+  }
+
+  .meterValue {
+    width: 74px;
+  }
+
+  .sessionState {
+    width: 96px;
+  }
+}
