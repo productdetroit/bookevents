@@ -1018,3 +1018,79 @@
     width: 96px;
   }
 }
+
+/* Cookie consent bar ----------------------------------------------- */
+
+.consent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 18px var(--gutter);
+  background: var(--paper);
+  border-top: 1px solid var(--ink);
+}
+
+.consentText {
+  flex: 1;
+  min-width: 260px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--bark);
+  max-width: 72ch;
+}
+
+.consentActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.consentBtn {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 11px 22px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 140ms ease, border-color 140ms ease;
+}
+
+.consentDecline {
+  composes: consentBtn;
+  background: transparent;
+  border-color: var(--sand);
+  color: var(--ink);
+}
+
+.consentDecline:hover {
+  border-color: var(--ink);
+}
+
+.consentAccept {
+  composes: consentBtn;
+  background: var(--terracotta);
+  color: var(--paper);
+}
+
+.consentAccept:hover {
+  background: var(--kiln);
+}
+
+@media (max-width: 560px) {
+  .consentActions {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .consentDecline,
+  .consentAccept {
+    flex: 1;
+  }
+}

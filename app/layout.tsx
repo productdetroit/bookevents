@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo, Newsreader } from "next/font/google";
 
+import { CookieConsent } from "./_components/CookieConsent";
+import { GoogleAnalytics } from "./_components/GoogleAnalytics";
 import { SITE_URL } from "./_content";
 
 import "./globals.css";
@@ -47,6 +49,14 @@ export const viewport: Viewport = {
   themeColor: "#faf7f2",
 };
 
+/*
+ * Analytics is opt-in by configuration: with no measurement ID set, no
+ * script loads and no banner appears. That keeps local development and
+ * preview deployments clean, and means a missing env var degrades to "no
+ * analytics" rather than a broken page.
+ */
+const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
 export default function RootLayout({
   children,
 }: {
@@ -54,7 +64,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${newsreader.variable} ${archivo.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        {GA_ID ? (
+          <>
+            <GoogleAnalytics gaId={GA_ID} />
+            <CookieConsent />
+          </>
+        ) : null}
+      </body>
     </html>
   );
 }
