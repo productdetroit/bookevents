@@ -1,4 +1,14 @@
 /**
+ * The canonical origin, used for metadataBase, robots and the sitemap.
+ *
+ * It is the www host on purpose: the apex 308-redirects to www, so
+ * declaring the apex anywhere would advertise a URL that immediately
+ * redirects. If you ever flip the redirect to serve the apex instead,
+ * change this one constant and everything follows.
+ */
+export const SITE_URL = "https://www.bookevents.app";
+
+/**
  * Copy and link targets for the marketing page.
  *
  * The Shopify listing does not exist yet, so every install call-to-action

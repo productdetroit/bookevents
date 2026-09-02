@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo, Newsreader } from "next/font/google";
 
+import { SITE_URL } from "./_content";
+
 import "./globals.css";
 
 const newsreader = Newsreader({
@@ -19,7 +21,8 @@ const archivo = Archivo({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bookevents.app"),
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: "/" },
   title: "Book Events — Run the event, not the paperwork",
   description:
     "Book Events sells the tickets, holds the capacity, and gets everyone through the gate. Tell it your real limits — seats, staff, mats, kits, goats — and it holds the tightest one for you. A Shopify app, free to install.",
