@@ -19,6 +19,7 @@ const STAGES: { label: string; dot: string; items: string[] }[] = [
       "Time-aware pools across overlapping sessions",
       "Weather cancellation and bulk reschedule in one action",
       "Wallet passes and POS check-in",
+      "Calendar links in every ticket email",
       "Waivers verified at the gate",
       "Deposits with scheduled balance capture",
       "Waitlist backfill on cancellation",
