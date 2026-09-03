@@ -6,17 +6,19 @@ const STAGES: { label: string; dot: string; items: string[] }[] = [
     dot: "var(--field)",
     items: [
       "Resource pools with consumption weights",
-      "Time-aware pools across overlapping sessions",
-      "Offline scanning and reconciliation",
       "Recurring schedules and blackout dates",
-      "Wallet passes, POS check-in, theme blocks",
+      "Per-attendee QR tickets by email and PDF",
+      "Offline scanning and reconciliation",
+      "Theme blocks and a storefront that needs no setup",
     ],
   },
   {
     label: "Next",
     dot: "var(--ochre)",
     items: [
+      "Time-aware pools across overlapping sessions",
       "Weather cancellation and bulk reschedule in one action",
+      "Wallet passes and POS check-in",
       "Waivers verified at the gate",
       "Deposits with scheduled balance capture",
       "Waitlist backfill on cancellation",
