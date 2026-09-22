@@ -37,7 +37,11 @@ export function Origin() {
         </div>
 
         <div className={styles.originAside}>
-          <PhotoFrame note="Photograph: the barn set for a farm-to-table dinner" />
+          <PhotoFrame
+            src="/origin-farm-table.jpg"
+            alt="A long table laid with green plates, potted herbs and cut dahlias, set down the middle of a market garden under a flowering arch"
+            note="Photograph: the table set for a farm-to-table dinner"
+          />
           <p className={styles.originCaption}>
             Forty seats. Two kitchen staff. One evening.
           </p>
